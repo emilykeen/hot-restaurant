@@ -56,23 +56,28 @@ app.post("/api/tables", function(req, res) {
 
     console.log(newcustomer);
 
+    if (customers.length > 4) {
+        res.redirect(307, '/api/waitlist')
+    } else {
+        customers.push(newcustomer);
 
-
-
-    // if (customers.length > 0) {
-      res.redirect(307, '/api/waitlist')
-    // } else {
-        // customers.push(newcustomer);
-
-    // }
+    }
 
 
     res.json(newcustomer);
     res.json(newWaitlistcustomer);
 })
-app.get("/api/waitlist", function(req,res){
+app.get("/api/waitlist", function(req, res) {
 
-  res.send("works!");
+    res.send("works!");
+})
+
+app.post("/#", function(req, res) {
+
+    console.log(res);
+    customers.empty();
+
+    // customers.splice(0,customers.length);
 })
 app.post("/api/waitlist", function(req, res) {
 
