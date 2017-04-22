@@ -75,6 +75,7 @@ app.get("/api/waitlist", function(req, res) {
 app.post("/api/clear", function(req, res) {
 
     customers = [];
+    waitlist = [];
 
 })
 app.post("/api/waitlist", function(req, res) {
