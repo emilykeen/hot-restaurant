@@ -67,20 +67,23 @@ app.post("/api/tables", function(req, res) {
     if (customers.length > 5) {
         app.post("/api/waitlist", function(req, res) {
             // req.body hosts is equal to the JSON post sent from the user
-            var newcustomer = req.body;
+            var newWaitlistcustomer = req.body;
 
-            console.log(newcustomer);
+            console.log(newWaitlistcustomer);
 
             // We then add the json the user
-            waitlist.push(newcustomer);
+            waitlist.push(newWaitlistcustomer);
 
             // We then display the JSON to the users
-            res.json(newcustomer);
+            res.json(newWaitlistcustomer);
         })
-    } else customers.push(newcustomer);
+    } else {customers.push(newcustomer);
+
+    }
 
     // We then display the JSON to the users
     res.json(newcustomer);
+     res.json(newWaitlistcustomer);
 })
 
 // Starts the server to begin listening
