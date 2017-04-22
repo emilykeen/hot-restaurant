@@ -72,12 +72,10 @@ app.get("/api/waitlist", function(req, res) {
     res.send("works!");
 })
 
-app.post("/#", function(req, res) {
+app.post("/api/clear", function(req, res) {
 
-    console.log(res);
-    customers.empty();
+    customers = [];
 
-    // customers.splice(0,customers.length);
 })
 app.post("/api/waitlist", function(req, res) {
 
